@@ -1,5 +1,5 @@
 // Importing Google Fonts
-@import url('href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
 //------GENERAL SETTINGS -------------------------------
 
@@ -20,14 +20,23 @@ header {
 // Define color variables
 $colors: (
   //--------PRIMARY-----------------------------------
-  /*Primary*/ 'tomato': hsl(4, 100%, 67%),
+'blue': hsl(246, 80%, 60%),
   //--------NEUTRAL    ----------------------------
-  /*Primary*/ 'dark-slate-grey': hsl(234, 29%, 20%),
-  /*Primary*/ 'charcoal-grey': hsl(235, 18%, 26%),
+'light-red-work': hsl(15, 100%, 70%),
+'soft-blue-play': hsl(195, 74%, 62%),
+'light-red-study': hsl(348, 100%, 68%),
+'limegreen-exercise': hsl(145, 58%, 55%),
+'violet-social': hsl(264, 64%, 52%),
+'soft-orange-self-care': hsl(43, 84%, 65%),
+'very-dark-blue': hsl(226, 43%, 10%),
+'dark-blue': hsl(235, 46%, 20%),
+'desaturated-blue': hsl(235, 45%, 61%),
+'pale-blue': hsl(236, 100%, 87%),
+
   //--------STANDARD -----------------------------------
-  /*Neutral*/ 'white': hsl(0, 0%, 100%),
-  /*Neutral*/ 'grey': hsl(0, 0%, 50%),
-  /*Neutral*/ 'black': hsl(0, 0%, 0%)
+'white' : hsl(0, 0%, 100%),
+ 'grey' : hsl(0, 0%, 50%),
+ 'black' : hsl(0, 0%, 0%)
 );
 
 // Function to retrieve colors
