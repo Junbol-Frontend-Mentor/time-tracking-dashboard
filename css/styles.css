@@ -1,0 +1,302 @@
+@import url('href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body section,
+header {
+  padding: 0;
+  margin: 0;
+}
+
+/* QUERY FOR MOBILE FIRST */
+html,
+body {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* This ensures that the total height is at least the height of the viewport */
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  background-color: hsl(235, 18%, 26%);
+}
+
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: hsl(235, 18%, 26%);
+}
+
+.articleContainer {
+  width: 100%;
+  min-height: 700px; /* Use min-height to accommodate varying content sizes */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+  background-color: hsl(235, 18%, 26%);
+}
+
+.card {
+  width: 80%;
+  min-height: 600px; /* Use min-height to accommodate varying content sizes */
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border-radius: 15px;
+  margin-bottom: 1rem;
+  opacity: 1;
+  background-color: hsl(0, 0%, 100%);
+}
+.card__bgImage {
+  order: -1;
+  width: 100%;
+  height: 400px;
+  background-image: url(../assets/images/illustration-sign-up-mobile.svg);
+  background-size: cover;
+  margin-bottom: 2rem;
+  border-radius: 0px 0px 15px 15px;
+  background-position: center;
+}
+.card__wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.card__content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin-bottom: 1rem;
+}
+.card__legend {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+.card__blockList {
+  display: flex;
+}
+.card__listWrapper {
+  display: flex;
+}
+.card__iconlist {
+  display: inline-block; /* Ensures it does not default to block level */
+  padding-top: 0.2rem;
+}
+.card__iconSuccess {
+  margin-right: 0.5rem;
+}
+.card .newsletter-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+}
+.card .newsletter-form__label {
+  margin-bottom: 1rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 0.5;
+  color: hsl(234, 29%, 20%);
+}
+.card .newsletter-form__input {
+  width: 100%;
+  height: 3rem;
+  padding: 1rem;
+  border-radius: 7px;
+  border: 1px dashed hsl(235, 18%, 26%);
+  margin-bottom: 1.5rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: hsl(235, 18%, 26%);
+}
+.card .newsletter-form__input::placeholder {
+  opacity: 1;
+  color: hsl(0, 0%, 50%);
+}
+.card .newsletter-form__input:focus {
+  outline: none;
+  border: 1px dashed hsl(4, 100%, 67%);
+}
+.card .newsletter-form__input:focus::placeholder {
+  color: transparent;
+}
+.card .newsletter-form__submitBtn {
+  width: 100%;
+  height: 3.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin: 0 auto;
+  border-radius: 10px;
+  background-color: hsl(234, 29%, 20%);
+  margin-bottom: 1rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: hsl(0, 0%, 100%);
+}
+.card .newsletter-form__submitBtn:hover {
+  background-color: hsl(4, 100%, 67%);
+}
+
+h1 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+h2 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+}
+
+p {
+  display: inline-block;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.modal {
+  width: 70%;
+  min-height: 700px; /* Use min-height to accommodate varying content sizes */
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  position: absolute;
+  top: 100px;
+  opacity: 1;
+  animation: float 3s ease-in-out infinite;
+  padding: 2rem;
+  margin: 0 auto;
+  border-radius: 15px;
+  background-color: hsl(0, 0%, 100%);
+}
+.modal__dismissBtn {
+  width: 100%;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 10px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: hsl(0, 0%, 100%);
+  background-color: hsl(234, 29%, 20%);
+  transition: transform 0.5s ease;
+}
+.modal__dismissBtn:hover {
+  background-color: hsl(4, 100%, 67%);
+}
+
+.attribution {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 4rem;
+  margin-bottom: 3rem; /* Keeps the footer at the bottom but only after all other content */
+  color: hsl(0, 0%, 50%);
+}
+
+.attribution a {
+  color: hsl(0, 0%, 100%);
+  text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  .articleContainer {
+    width: 100%;
+    height: 100%; /* Use min-height to accommodate varying content sizes */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding: 10rem;
+  }
+  .card {
+    min-width: 50rem;
+    min-height: 40rem;
+    max-width: 70rem;
+    amx-height: 60rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 2rem;
+    gap: 2rem;
+    margin: 0 auto;
+  }
+  .card__bgImage {
+    order: 1;
+    width: 50%;
+    height: auto;
+    background-image: url(../assets/images/illustration-sign-up-desktop.svg);
+    background-size: cover;
+    margin-bottom: 2rem;
+    border-radius: 15px;
+    background-position: center;
+  }
+  .card__wrapper {
+    display: flex;
+    align-items: center;
+  }
+  .card__content {
+    width: 100%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    jus: center;
+  }
+  .card__legend {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .modal {
+    width: 70%;
+    max-width: 700px;
+    min-height: 700px; /* Use min-height to accommodate varying content sizes */
+  }
+}
+/*
+@media (min-width: 650px) {
+  .modal {
+    width: 400px;
+    height: 55px;
+    top: 275px;
+    left: 500px;
+    border-radius: 10px 10px 10px 10px;
+  }
+}*/
+/* transition: transform 0.5s ease;
+&:hover {
+  color: color('soft-magenta'); 
+  transform: scale(1.2);
+}  */
+
+/*# sourceMappingURL=styles.css.map */

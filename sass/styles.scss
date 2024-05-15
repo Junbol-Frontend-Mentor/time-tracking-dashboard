@@ -1,0 +1,358 @@
+// Importing Google Fonts
+@import url('href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+//------GENERAL SETTINGS -------------------------------
+
+// Universal reset also explicitly to all pseudo-elements
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body section,
+header {
+  padding: 0;
+  margin: 0;
+}
+
+// Define color variables
+$colors: (
+  //--------PRIMARY-----------------------------------
+  /*Primary*/ 'tomato': hsl(4, 100%, 67%),
+  //--------NEUTRAL    ----------------------------
+  /*Primary*/ 'dark-slate-grey': hsl(234, 29%, 20%),
+  /*Primary*/ 'charcoal-grey': hsl(235, 18%, 26%),
+  //--------STANDARD -----------------------------------
+  /*Neutral*/ 'white': hsl(0, 0%, 100%),
+  /*Neutral*/ 'grey': hsl(0, 0%, 50%),
+  /*Neutral*/ 'black': hsl(0, 0%, 0%)
+);
+
+// Function to retrieve colors
+@function color($color-name) {
+  @return map-get($colors, $color-name);
+}
+
+// Typography Mixin with parameters
+@mixin typography($weight, $size, $line-height, $color) {
+  font-family: 'Roboto', sans-serif;
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $line-height;
+  color: $color;
+}
+
+/* QUERY FOR MOBILE FIRST */
+html,
+body {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* This ensures that the total height is at least the height of the viewport */
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  background-color: color('charcoal-grey');
+  //background-color: crimson;
+}
+
+main {
+  //flex: 1 0 auto; /* This allows the main content to grow and shrink but not shrink smaller than its content */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  // padding: 0.5rem;
+  background-color: color('charcoal-grey');
+}
+
+.articleContainer {
+  width: 100%;
+  min-height: 700px; /* Use min-height to accommodate varying content sizes */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+  //margin: 0 auto;
+  //padding: 0.5rem;
+  background-color: color('charcoal-grey');
+}
+
+.card {
+  width: 80%;
+  min-height: 600px; /* Use min-height to accommodate varying content sizes */
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border-radius: 15px;
+  margin-bottom: 1rem;
+  opacity: 1;
+  background-color: color('white');
+  //background-color: chartreuse;
+  &__bgImage {
+    order: -1; // This ensures the image is on top in mobile view
+    width: 100%;
+    height: 400px;
+    background-image: url(../assets/images/illustration-sign-up-mobile.svg);
+    background-size: cover;
+    margin-bottom: 2rem;
+    border-radius: 0px 0px 15px 15px;
+    background-position: center;
+    //background-color: red;
+  }
+  &__wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    //background-color: darkslategray;
+  }
+
+  &__content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin-bottom: 1rem;
+    //background-color: fuchsia;
+  }
+  &__legend {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+    //background-color: darkolivegreen;
+  }
+  &__blockList {
+    display: flex;
+  }
+  &__listWrapper {
+    display: flex;
+    //background-color: darkmagenta;
+  }
+  &__iconlist {
+    display: inline-block; /* Ensures it does not default to block level */
+    padding-top: 0.2rem;
+    //background-color: aqua;
+  }
+  &__iconSuccess {
+    margin-right: 0.5rem;
+  }
+  //---------FORM ---------------
+
+  .newsletter-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+
+    &__label {
+      margin-bottom: 1rem;
+      @include typography(600, 1rem, 0.5, color('dark-slate-grey'));
+    }
+
+    &__input {
+      width: 100%;
+      height: 3rem;
+      padding: 1rem;
+      border-radius: 7px;
+      border: 1px dashed color('charcoal-grey'); // Ensure color function is returning correct value
+      margin-bottom: 1.5rem;
+      @include typography(600, 1rem, 1.5, color('charcoal-grey'));
+      //background-color: aqua;
+
+      &::placeholder {
+        opacity: 1; // Ensure the placeholder is fully visible
+        color: color('grey'); // Assuming you want to style placeholder with color
+      }
+
+      &:focus {
+        outline: none; // Using !important as a last resort
+        border: 1px dashed color('tomato');
+      }
+
+      &:focus::placeholder {
+        color: transparent; // Optional: hides placeholder on focus
+      }
+    }
+
+    &__submitBtn {
+      width: 100%;
+      height: 3.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      margin: 0 auto;
+      border-radius: 10px;
+      background-color: color('dark-slate-grey');
+      margin-bottom: 1rem;
+      @include typography(700, 1rem, 1.5, color('white'));
+      //background-color: chocolate; // Commented out as it's overridden by the line above
+      &:hover {
+        background-color: color('tomato'); // Light grey on hover
+      }
+    }
+  }
+}
+
+h1 {
+  @include typography(700, 2.5rem, 1.5, color('dark-grayish-blue'));
+  margin-bottom: 1.5rem;
+  &:hover {
+    color: color('light-grayish-green');
+  }
+}
+
+h2 {
+  @include typography(600, 0.9rem, 1.5, color('dark-grayish-blue'));
+  margin-bottom: 2rem;
+}
+
+p {
+  display: inline-block;
+  @include typography(600, 1.2rem, 1.5, color('desaturated-dark-blue'));
+}
+
+//------- MODAL --------------
+
+.modal {
+  width: 70%;
+  min-height: 700px; /* Use min-height to accommodate varying content sizes */
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  position: absolute;
+  top: 100px;
+  opacity: 1;
+  animation: float 3s ease-in-out infinite;
+  padding: 2rem;
+  // z-index: -1;
+  margin: 0 auto;
+  border-radius: 15px;
+
+  background-color: color('white');
+  //background-color: chartreuse;
+  &__dismissBtn {
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 10px;
+    @include typography(700, 1rem, 1.5, color('white'));
+    background-color: color('dark-slate-grey');
+    transition: transform 0.5s ease;
+    &:hover {
+      background-color: color('tomato'); // Light grey on hover
+    }
+  }
+}
+
+// ------- MAGIC ----------------------------
+
+//------   FOOTER    ----------------
+
+.attribution {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 4rem;
+  margin-bottom: 3rem; /* Keeps the footer at the bottom but only after all other content */
+  color: color('grey');
+}
+.attribution a {
+  color: color('white');
+  text-decoration: none;
+}
+
+//------ MEDIA QUERY FOR DESKTOPS AND TABLETS ----------------
+
+@media (min-width: 768px) {
+  .articleContainer {
+    width: 100%;
+    height: 100%; /* Use min-height to accommodate varying content sizes */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem; //margin: 0 auto;
+    padding: 10rem;
+  }
+  .card {
+    min-width: 50rem;
+    min-height: 40rem;
+    max-width: 70rem;
+    amx-height: 60rem;
+    display: flex;
+    flex-direction: row; // Switch to horizontal layout
+    justify-content: center; // Space between the content and the image
+    padding: 2rem;
+    gap: 2rem;
+    margin: 0 auto;
+
+    &__bgImage {
+      order: 1; // This ensures the image is on top in mobile view
+      width: 50%;
+      height: auto;
+      background-image: url(../assets/images/illustration-sign-up-desktop.svg);
+      background-size: cover;
+      margin-bottom: 2rem;
+      border-radius: 15px;
+      background-position: center;
+      //background-color: red;
+    }
+    &__wrapper {
+      display: flex;
+      align-items: center;
+    }
+    &__content {
+      width: 100%;
+      height: 70%;
+      display: flex;
+      flex-direction: column;
+      jus: center;
+    }
+    &__legend {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    // &__img {
+    //   width: 90%;
+    //   height: auto;
+    //   margin-bottom: 2rem;
+    //   border-radius: 5px 0px 0px 0px;
+    //   // background-color: chartreuse;
+    // }
+  }
+
+  .modal {
+    width: 70%;
+    max-width: 700px;
+    min-height: 700px; /* Use min-height to accommodate varying content sizes */
+  }
+}
+
+/*
+@media (min-width: 650px) {
+  .modal {
+    width: 400px;
+    height: 55px;
+    top: 275px;
+    left: 500px;
+    border-radius: 10px 10px 10px 10px;
+  }
+}*/
+
+///////////////// TOOLS ///////////////////////////
+//🛠
+
+/* transition: transform 0.5s ease;
+&:hover {
+  color: color('soft-magenta'); 
+  transform: scale(1.2);
+}  */
