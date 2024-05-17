@@ -4,7 +4,7 @@ let myCardTemplate = document.getElementById('card-template');
 let data = null; // Variable to store the fetched data
 
 //-------FETCHING THE DATA -------------
-fetch('../data.json')
+fetch('./data.json')
   .then((request) => {
     if (!request.ok) {
       console.log('Oops! Something went wrong.');
