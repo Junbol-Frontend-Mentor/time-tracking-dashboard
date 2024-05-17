@@ -43,7 +43,8 @@ This is a solution to the [Time tracking dashboard challenge on Frontend Mentor]
 
 ### What I learned
 
-Working with SCSS animations, BEM & MediaQueries
+Working with SCSS animations, BEM & MediaQueries specially working with CSS GRID Areas combined with Dynamic Grid columns and rows.
+And of course creating all the logic to create the cards dynamically with javascript the use of fetch() and forEach method and interact with the DOM to clone and add cards to the UI also using the Switch conditional system to give the right icon and color to each card. and the forEach method. It has been the most difficult challenge until now, but I am happy I managed to finished it.
 
 ```
 

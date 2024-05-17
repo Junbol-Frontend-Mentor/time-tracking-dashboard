@@ -86,7 +86,7 @@ function generateCards(timeframe) {
 
     // Set icon
     let bgIcon = cardClone.querySelector('.card__bgIcon');
-    bgIcon.style.backgroundImage = `url(./assets/images/${iconPath})`;
+    bgIcon.style.backgroundImage = `url(./assets/images/${iconPath})`; //🐞🚩is important to give the path thinking this will be request from the root folder not from the script folder that is why only one dot was used.
 
     // Append the cloned card to the container element to display it on the page
     myCardContainer.appendChild(cardClone);
