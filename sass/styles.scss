@@ -383,7 +383,7 @@ h2 {
 
     &__previous {
       display: inline-block;
-      @include typography(400, 1rem, 0.5, color('white'));
+      @include typography(400, 0.8rem, 0.5, color('white'));
     }
   }
 
